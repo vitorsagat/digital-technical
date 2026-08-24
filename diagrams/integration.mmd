@@ -1,0 +1,11 @@
+flowchart LR
+    Outlook[Microsoft 365 and Outlook] --> Graph[Microsoft Graph Adapter]
+    Portal[Corporate Portal] --> API[REST API]
+    Automation[Automation Platforms] --> API
+    Graph --> API
+    API --> Core[DIGITAL TECHNICAL Core]
+    Core --> KB[Approved Knowledge Sources]
+    Core --> IdP[Enterprise Identity]
+    Core --> AI[AI Provider Adapter]
+    Core --> ITSM[ITSM and Approval Adapter]
+    Core --> Observability[Logs, Metrics, Traces]

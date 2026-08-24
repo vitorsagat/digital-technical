@@ -1,0 +1,17 @@
+flowchart TB
+    Git[GitHub Repository] --> CI[CI Quality and Security]
+    CI --> Registry[Signed Container Registry]
+    CI --> Plan[Terraform Plan]
+    Plan --> Approval[Environment Approval]
+    Approval --> Infra[Terraform Apply]
+    Registry --> Runtime[Application Runtime]
+    Infra --> Runtime
+    Runtime --> Smoke[Health and E2E Smoke Tests]
+    Smoke --> Observe[Monitoring and Alerts]
+    subgraph Environments
+      Dev[dev]
+      Test[test]
+      Staging[staging]
+      Prod[production]
+    end
+    Approval --> Environments

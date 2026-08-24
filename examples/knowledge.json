@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Cloud Architecture Review",
+    "url": "https://docs.oracle.com/en/solutions/",
+    "excerpt": "Architecture changes should be tested, observed, documented, and approved before production rollout.",
+    "approved": true
+  },
+  {
+    "title": "Security by Design",
+    "url": "https://docs.oracle.com/en-us/iaas/Content/Security/Concepts/security_guide.htm",
+    "excerpt": "Apply least privilege, encryption, audit logging, network controls, and secret management.",
+    "approved": true
+  },
+  {
+    "title": "Reliability Guidance",
+    "url": "https://docs.oracle.com/en/solutions/oci-best-practices/",
+    "excerpt": "Use health checks, retries, idempotency, monitoring, and recovery procedures for reliable services.",
+    "approved": true
+  }
+]

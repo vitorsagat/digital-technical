@@ -1,0 +1,13 @@
+flowchart LR
+    Channels[Web, API, Email, Automation] --> API[API Boundary]
+    API --> App[Application Services]
+    App --> Core[Business Core]
+    Core --> Safety[Safety and Human Review]
+    App --> AIPort[AI Port]
+    App --> KnowledgePort[Knowledge Port]
+    App --> DataPort[Repository Port]
+    App --> EventPort[Event Port]
+    AIPort --> AIAdapters[AI Adapters]
+    KnowledgePort --> KnowledgeAdapters[Knowledge Adapters]
+    DataPort --> DataAdapters[Database Adapters]
+    EventPort --> EventAdapters[Message Adapters]

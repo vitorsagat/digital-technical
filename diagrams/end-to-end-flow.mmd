@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant C as Client
+    participant A as API
+    participant S as AdvisorService
+    participant K as Knowledge
+    participant M as AI Provider
+    participant R as Repository
+    participant E as Events
+    C->>A: POST /v1/requests
+    A->>S: submit(question, criticality)
+    S->>R: save(received)
+    S->>K: search approved sources
+    alt critical or no approved source
+        S->>R: save(human_review)
+    else safe to process
+        S->>M: generate(question, sources)
+        M-->>S: recommendation
+        S->>R: save(completed)
+    end
+    S->>E: publish outcome
+    S-->>A: advisory result
+    A-->>C: 201 + request ID

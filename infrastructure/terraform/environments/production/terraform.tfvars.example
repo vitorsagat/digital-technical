@@ -1,0 +1,8 @@
+compartment_id    = "ocid1.compartment.oc1..replace_me"
+region            = "ap-osaka-1"
+environment       = "production"
+bucket_suffix     = "replace-with-unique-suffix"
+vcn_cidr          = "10.45.0.0/16"
+subnet_cidr       = "10.45.10.0/24"
+nosql_read_units  = 10
+nosql_write_units = 10

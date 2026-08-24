@@ -1,0 +1,6 @@
+compartment_id = "ocid1.compartment.oc1..replace_me"
+region         = "ap-osaka-1"
+environment    = "staging"
+bucket_suffix  = "replace-with-unique-suffix"
+vcn_cidr       = "10.44.0.0/16"
+subnet_cidr    = "10.44.10.0/24"

@@ -1,0 +1,20 @@
+flowchart TB
+    Client[Client] -->|HTTPS 443| APIGW[OCI API Gateway]
+    APIGW --> Fn[OCI Functions Application]
+    Fn --> Queue[OCI Queue]
+    Fn --> NoSQL[OCI NoSQL]
+    Fn --> Object[Object Storage]
+    Fn --> AI[OCI Generative AI or external AI]
+    Fn --> Logs[OCI Logging]
+    Queue --> Worker[Worker Function]
+    Worker --> NoSQL
+    Topic[Notifications Topic] --> Ops[Operations]
+    subgraph Network[VCN and application subnet]
+      APIGW
+      Fn
+      Worker
+    end
+    Terraform[Terraform OCI module] -.creates.-> Network
+    Terraform -.creates.-> Queue
+    Terraform -.creates.-> NoSQL
+    Terraform -.creates.-> Object
